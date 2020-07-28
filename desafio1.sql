@@ -26,7 +26,9 @@ CREATE TABLE artist (
 CREATE TABLE follow (
   user_id INT NOT NULL,
   artist_id INT NOT NULL,
-  PRIMARY KEY (user_id, artist_id)
+  PRIMARY KEY (user_id, artist_id),
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (artist_id) REFERENCES artist(id)
 );
 
 CREATE TABLE album (
@@ -46,7 +48,9 @@ CREATE TABLE song (
 CREATE TABLE reproduction (
   user_id INT NOT NULL,
   song_id INT NOT NULL,
-  PRIMARY KEY (user_id, song_id)
+  PRIMARY KEY (user_id, song_id),
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (song_id) REFERENCES song(id)
 );
 
 -- Putting the artist values on tables
