@@ -1,6 +1,6 @@
 {
   "coluna_usuario": "name",
-  "tabela_que_contem_usuario": "user",
+  "tabela_que_contem_usuario": "users",
   "coluna_plano": "name",
   "tabela_que_contem_plano": "plan",
   "coluna_historico_de_reproducoes": "song_id",
@@ -8,7 +8,7 @@
   "coluna_seguindo_artistas": "artist_id",
   "tabela_que_contem_seguindo_artistas": "following_artists",
   "coluna_artista": "name",
-  "tabela_que_contem_artista": "artist",
+  "tabela_que_contem_artista": "artists",
   "coluna_album": "title",
   "tabela_que_contem_album": "albuns",
   "coluna_cancoes": "songs",

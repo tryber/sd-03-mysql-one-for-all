@@ -4,21 +4,21 @@ CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE plan(
+CREATE TABLE plans(
 id INT PRIMARY KEY auto_increment,
 name VARCHAR(20) NOT NULL,
 price DECIMAL(5,2) NOT NULL
 ) engine = InnoDB;
 
-CREATE TABLE user(
+CREATE TABLE users(
 id INT PRIMARY KEY auto_increment,
 name VARCHAR(50) NOT NULL,
 age INT,
 plan_id INT NOT NULL,
-FOREIGN KEY (plan_id) REFERENCES plan(id)
+FOREIGN KEY (plan_id) REFERENCES plans(id)
 ) engine = InnoDB;
 
-CREATE TABLE artist(
+CREATE TABLE artists(
 id INT PRIMARY KEY auto_increment,
 name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
@@ -27,7 +27,7 @@ CREATE TABLE albuns(
 id INT PRIMARY KEY auto_increment,
 title VARCHAR(50) NOT NULL,
 artist_id INT NOT NULL,
-FOREIGN KEY (artist_id) REFERENCES artist(id)
+FOREIGN KEY (artist_id) REFERENCES artists(id)
 ) engine = InnoDB;
 
 CREATE TABLE songs(
@@ -41,7 +41,7 @@ CREATE TABLE reproduction_history(
 user_id INT NOT NULL,
 song_id INT NOT NULL,
 PRIMARY KEY (user_id, song_id),
-FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (user_id) REFERENCES users(id),
 FOREIGN KEY (song_id) REFERENCES songs(id)
 ) engine = InnoDB;
 
@@ -49,24 +49,24 @@ CREATE TABLE following_artists(
 user_id INT NOT NULL,
 artist_id INT NOT NULL,
 PRIMARY KEY (user_id, artist_id),
-FOREIGN KEY (user_id) REFERENCES user(id),
-FOREIGN KEY (artist_id) REFERENCES artist(id)
+FOREIGN KEY (user_id) REFERENCES users(id),
+FOREIGN KEY (artist_id) REFERENCES artists(id)
 ) engine = InnoDB;
 
-INSERT INTO plan (name, price)
+INSERT INTO plans (name, price)
 VALUES
   ('Gratuito', 0),
   ('Familiar', 7.99),
   ('Universitário', 5.99);
 
-INSERT INTO user (name, age, plan_id)
+INSERT INTO users (name, age, plan_id)
 VALUES
   ('Thati', 23, 1),
   ('Cintia', 35, 2),
   ('Bill', 20, 3),
   ('Roger', 45, 1);
   
-INSERT INTO artist (name)
+INSERT INTO artists (name)
 VALUES
   ('Walter Phoenix'),
   ('Peter Strong'),
