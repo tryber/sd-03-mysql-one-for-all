@@ -85,9 +85,9 @@ VALUES
 ('Without My Streets',5);
 
 CREATE TABLE IF NOT EXISTS Following_Artists(
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NOT NULL,
 artist_id INT NOT NULL,
+PRIMARY KEY (user_id, artist_id),
 FOREIGN KEY (user_id) REFERENCES User(id),
 FOREIGN KEY (artist_id) REFERENCES Artist(id)
 )Engine=InnoDB;
@@ -104,9 +104,9 @@ VALUES
 (4, 4);
 
 CREATE TABLE IF NOT EXISTS Reproduction_History(
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 user_id INT NOT NULL,
 song_id INT NOT NULL,
+PRIMARY KEY (user_id, song_id),
 FOREIGN KEY (user_id) REFERENCES User(id),
 FOREIGN KEY (song_id) REFERENCES Songs(id)
 )Engine=InnoDB;
