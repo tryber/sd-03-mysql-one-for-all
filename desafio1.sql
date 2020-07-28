@@ -64,6 +64,12 @@ VALUES ('Envious', 1),
 ('Incandescent', 3),
 ('Temporary Culture', 4);
 
+INSERT INTO users(user, age, plan_id)
+VALUES ('Thati', 23, 1),
+('Cintia', 35, 3),
+('Bill', 20, 2),
+('Roger', 45, 1);
+
 INSERT INTO songs(song, album_id)
 VALUES ('Soul For Us', 1),
 ('Reflections of Magic', 2),
