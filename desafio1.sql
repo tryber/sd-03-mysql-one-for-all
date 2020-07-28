@@ -5,75 +5,75 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plans (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
+    plan_id INT PRIMARY KEY AUTO_INCREMENT,
+    plan VARCHAR(50) NOT NULL,
     plan_value DOUBLE NOT NULL
 )  ENGINE=INNODB;
 
 CREATE TABLE artists (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
+    artist_id INT PRIMARY KEY AUTO_INCREMENT,
+    artist VARCHAR(100) NOT NULL
 )  ENGINE=INNODB;
 
 CREATE TABLE users (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    user VARCHAR(100) NOT NULL,
     age INT NOT NULL,
     plan_id INT NOT NULL,
     FOREIGN KEY (plan_id)
-        REFERENCES plans (id)
+        REFERENCES plans (plan_id)
 )  ENGINE=INNODB;
 
 CREATE TABLE artists_followers (
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
     FOREIGN KEY (user_id)
-        REFERENCES users (id),
+        REFERENCES users (user_id),
     FOREIGN KEY (artist_id)
-        REFERENCES artists (id),
+        REFERENCES artists (artist_id),
     PRIMARY KEY (user_id , artist_id)
 )  ENGINE=INNODB;
 
 CREATE TABLE albums (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    album_id INT PRIMARY KEY AUTO_INCREMENT,
+    album VARCHAR(100) NOT NULL,
     artist_id INT NOT NULL,
     FOREIGN KEY (artist_id)
-        REFERENCES artists (id)
+        REFERENCES artists (artist_id)
 )  ENGINE=INNODB;
 
 CREATE TABLE songs (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    song_id INT PRIMARY KEY AUTO_INCREMENT,
+    song VARCHAR(100) NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
-        REFERENCES albums (id)
+        REFERENCES albums (album_id)
 )  ENGINE=INNODB;
 
 CREATE TABLE songs_history (
     user_id INT NOT NULL,
     song_id INT NOT NULL,
     FOREIGN KEY (user_id)
-        REFERENCES users (id),
+        REFERENCES users (user_id),
     FOREIGN KEY (song_id)
-        REFERENCES songs (id),
+        REFERENCES songs (song_id),
     PRIMARY KEY (user_id , song_id)
 )  ENGINE=INNODB;
 
-INSERT INTO plans (name, plan_value)
+INSERT INTO plans (plan, plan_value)
 VALUES
 ('gratuito', 0),
 ('familiar', 7.99),
 ('universitário', 5.99);
 
-INSERT INTO artists (name)
+INSERT INTO artists (artist)
 VALUES
 ('Walter Phoenix'),
 ('Peter Strong'),
 ('Lance Day'),
 ('Freedie Shannon');
   
-INSERT INTO users (name, age, plan_id)
+INSERT INTO users (user, age, plan_id)
 VALUES
 ('Thati', 23, 1),
 ('Cintia', 35, 2),
@@ -91,7 +91,7 @@ VALUES
 (3,	1),
 (4,	4);
 
-INSERT INTO albums (name, artist_id)
+INSERT INTO albums (album, artist_id)
 VALUES
 ('Envious',	1),
 ('Exuberant', 1),
@@ -99,7 +99,7 @@ VALUES
 ('Incandescent', 3),
 ('Temporary Culture', 4);
 
-INSERT INTO songs (name, album_id)
+INSERT INTO songs (song, album_id)
 VALUES
 ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
