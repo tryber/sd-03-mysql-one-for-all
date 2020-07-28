@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE plano (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
-    valor_plano VARCHAR(50) NOT NULL
+    valor_plano DECIMAL(5, 2) NOT NULL
 )  ENGINE=INNODB;
 
 CREATE TABLE artista (
@@ -62,9 +62,9 @@ CREATE TABLE historico (
 
 INSERT INTO plano (nome, valor_plano)
 VALUES
-('gratuito', '0.00'),
-('familiar', '7.99'),
-('universitário', '5.99');
+('gratuito', 0),
+('familiar', 7.99),
+('universitário', 5.99);
 
 INSERT INTO artista (nome)
 VALUES
