@@ -18,6 +18,7 @@ CREATE TABLE artists(
 CREATE TABLE albums(
   album_id INT PRIMARY KEY AUTO_INCREMENT,
   album VARCHAR(100) NOT NULL,
+  artist_id INT NOT NULL,
   FOREIGN KEY(artist_id) REFERENCES artists(artist_id),
 ) ENGINE = INNODB;
 
@@ -25,22 +26,28 @@ CREATE TABLE users(
   user_id INT PRIMARY KEY AUTO_INCREMENT,
   user VARCHAR(40) NOT NULL,
   age INT NOT NULL,
+  plan_id INT NOT NULL,
   FOREIGN KEY(plan_id) REFERENCES plans(plan_id),
 ) ENGINE = INNODB;
 
 CREATE TABLE songs(
   song_id INT PRIMARY KEY AUTO_INCREMENT,
   song VARCHAR(100) NOT NULL,
+  album_id INT NOT NULL,
   FOREIGN KEY(album_id) REFERENCES albums(album_id),
 ) ENGINE = INNODB;
 
 CREATE TABLE artists_followers(
+  user_id INT NOT NULL,
+  artist_id INT NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users(user_id),
   FOREIGN KEY(artist_id) REFERENCES artists(artist_id),
   PRIMARY KEY (user_id, artist_id),
 ) ENGINE = INNODB;
 
 CREATE TABLE playlist_history(
+  user_id INT NOT NULL,
+  song_id INT NOT NULL,
   FOREIGN KEY(user_id) REFERENCES users(user_id),
   FOREIGN KEY(song_id) REFERENCES songs(song_id),
   PRIMARY KEY (user_id, song_id),
