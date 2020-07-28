@@ -5,52 +5,52 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plan(
-    id INT PRIMARY KEY auto_increment,
-    name VARCHAR(20) NOT NULL,
-    price DECIMAL(5,2) NOT NULL
+id INT PRIMARY KEY auto_increment,
+name VARCHAR(20) NOT NULL,
+price DECIMAL(5,2) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE user(
-    id INT PRIMARY KEY auto_increment,
-    name VARCHAR(50) NOT NULL,
-    age INT,
-    plan_id INT NOT NULL,
-    FOREIGN KEY (plan_id) REFERENCES plan(id)
+id INT PRIMARY KEY auto_increment,
+name VARCHAR(50) NOT NULL,
+age INT,
+plan_id INT NOT NULL,
+FOREIGN KEY (plan_id) REFERENCES plan(id)
 ) engine = InnoDB;
 
 CREATE TABLE artist(
-    id INT PRIMARY KEY auto_increment,
-    name VARCHAR(50) NOT NULL
+id INT PRIMARY KEY auto_increment,
+name VARCHAR(50) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE albuns(
-    id INT PRIMARY KEY auto_increment,
-    title VARCHAR(50) NOT NULL,
-    artist_id INT NOT NULL,
-    FOREIGN KEY (artist_id) REFERENCES artist(id)
+id INT PRIMARY KEY auto_increment,
+title VARCHAR(50) NOT NULL,
+artist_id INT NOT NULL,
+FOREIGN KEY (artist_id) REFERENCES artist(id)
 ) engine = InnoDB;
 
 CREATE TABLE songs(
-	id INT PRIMARY KEY auto_increment,
-    title VARCHAR(50) NOT NULL,
-    album_id INT NOT NULL,
-    FOREIGN KEY (album_id) REFERENCES albuns(id)
+id INT PRIMARY KEY auto_increment,
+title VARCHAR(50) NOT NULL,
+album_id INT NOT NULL,
+FOREIGN KEY (album_id) REFERENCES albuns(id)
 ) engine = InnoDB;
 
 CREATE TABLE reproduction_history(
-	user_id INT NOT NULL,
-    song_id INT NOT NULL,
-    PRIMARY KEY (user_id, song_id),
-    FOREIGN KEY (user_id) REFERENCES user(id),
-    FOREIGN KEY (song_id) REFERENCES songs(id)
+user_id INT NOT NULL,
+song_id INT NOT NULL,
+PRIMARY KEY (user_id, song_id),
+FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (song_id) REFERENCES songs(id)
 ) engine = InnoDB;
 
 CREATE TABLE following_artists(
-	user_id INT NOT NULL,
-    artist_id INT NOT NULL,
-    PRIMARY KEY (user_id, artist_id),
-    FOREIGN KEY (user_id) REFERENCES user(id),
-    FOREIGN KEY (artist_id) REFERENCES artist(id)
+user_id INT NOT NULL,
+artist_id INT NOT NULL,
+PRIMARY KEY (user_id, artist_id),
+FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (artist_id) REFERENCES artist(id)
 ) engine = InnoDB;
 
 INSERT INTO plan (name, price)
