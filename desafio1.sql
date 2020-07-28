@@ -62,7 +62,7 @@ CREATE TABLE historico (
 
 INSERT INTO plano (nome, valor_plano)
 VALUES
-('gratuito', 0),
+('gratuito', 0.00),
 ('familiar', 7.99),
 ('universitário', 5.99);
 

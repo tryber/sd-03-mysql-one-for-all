@@ -8,3 +8,4 @@ CREATE VIEW faturamento_atual AS
         SpotifyClone.plano AS plano
             INNER JOIN
         SpotifyClone.usuario AS usuario ON usuario.plano_id = plano.id;
+SELECT * FROM faturamento_atual;
