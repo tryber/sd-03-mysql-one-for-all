@@ -10,4 +10,4 @@ BEGIN
     AND artista.nome = nome_artista;
 END $$
 
-DELIMITER $$ ;
+DELIMITER ;
