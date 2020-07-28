@@ -110,7 +110,7 @@ INSERT INTO usuario_seguindo_artista(usuario_id, artista_id) VALUES
   (3, 2),
   (4, 4);
 
-INSERT INTO historico_reproducao(usuario_id, cancao_id) VALUES
+(INSERT INTO historico_reproducao(usuario_id, cancao_id) VALUES
   (1, 1),
   (1, 6),
   (1, 14),
@@ -125,4 +125,4 @@ INSERT INTO historico_reproducao(usuario_id, cancao_id) VALUES
   (4, 3),
   (4, 11),
   (4, 18);
-  
+)
