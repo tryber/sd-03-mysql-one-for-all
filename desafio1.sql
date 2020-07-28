@@ -53,31 +53,31 @@ CREATE TABLE playlist_history(
   PRIMARY KEY (user_id, song_id),
 ) ENGINE = INNODB;
 
-INSERT INTO plans(plan, plan_value)
+INSERT INTO plans(name, plan_value)
 VALUES ('gratuito', 0),
   ('universitário', 5.99),
   ('familiar', 7.99);
 
-INSERT INTO artists(artist)
+INSERT INTO artists(name)
 VALUES ('Walter Phoenix'),
   ('Peter Strong'),
   ('Lance Day'),
   ('Freedie Shannon');
 
-INSERT INTO albums(album, artist_id)
+INSERT INTO albums(name, artist_id)
 VALUES ('Envious', 1),
   ('Exuberant', 1),
   ('Hallowed Steam', 2),
   ('Incandescent', 3),
   ('Temporary Culture', 4);
 
-INSERT INTO users(user, age, plan_id)
+INSERT INTO users(name, age, plan_id)
 VALUES ('Thati', 23, 1),
   ('Cintia', 35, 3),
   ('Bill', 20, 2),
   ('Roger', 45, 1);
 
-INSERT INTO songs(song, album_id)
+INSERT INTO songs(name, album_id)
 VALUES ('Soul For Us', 1),
   ('Reflections of Magic', 1),
   ('Dance With Her Own', 1),
