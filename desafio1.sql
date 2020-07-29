@@ -41,7 +41,7 @@ CREATE TABLE `seguindo_artistas` (
   `id_artista` INT NOT NULL,
     FOREIGN KEY (`usuário_id`)
     REFERENCES `usuário` (`id`),
-	FOREIGN KEY (`id_artista`)
+	  FOREIGN KEY (`id_artista`)
     REFERENCES `artista` (`id_artista`)
 ) ENGINE = InnoDB;
 
