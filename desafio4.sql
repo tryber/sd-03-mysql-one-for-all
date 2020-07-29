@@ -6,7 +6,7 @@ SELECT (
   ) AS artista,
   COUNT(*) as seguidores
 FROM SpotifyClone.artists_followers af
-GROUP BY artistas
+GROUP BY artista
 ORDER BY seguidores DESC,
-  artistas
+  artista
 LIMIT 3;
