@@ -13,3 +13,4 @@ CREATE VIEW cancoes_premium AS
     GROUP BY (cancoes.name)
     ORDER BY 1;
     
+    
