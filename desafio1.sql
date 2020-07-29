@@ -7,7 +7,7 @@ USE SpotifyClone;
 CREATE TABLE plan (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
-    value_plan DECIMAL(5 , 2 ) NOT NULL
+    value_plan DECIMAL(5, 2) NOT NULL
 )  ENGINE=INNODB;
 
 CREATE TABLE artist (
@@ -64,15 +64,15 @@ INSERT INTO plan (name, value_plan)
 VALUES
 ('gratuito', 0),
 ('familiar', 7.99),
-('universitario', 5.99);
+('universitário', 5.99);
 
 INSERT INTO artist (name)
 VALUES
-('Walter Pheonix'), 
+('Walter Phoenix'),
 ('Peter Strong'),
 ('Lance Day'),
 ('Freedie Shannon');
-
+  
 INSERT INTO user (name, age, plan_id)
 VALUES
 ('Thati', 23, 1),
@@ -82,18 +82,18 @@ VALUES
 
 INSERT INTO following_artist (user_id, artist_id)
 VALUES
-(1,1),
-(1,4),
-(1,3),
-(2,1),
-(2,3),
-(3,2),
-(3,1),
-(4,4);
+(1, 1),
+(1, 4),
+(1,	3),
+(2,	1),
+(2,	3),
+(3,	2),
+(3,	1),
+(4,	4);
 
 INSERT INTO album (name, artist_id)
 VALUES
-('Envious', 1),
+('Envious',	1),
 ('Exuberant', 1),
 ('Hallowed Steam', 2),
 ('Incandescent', 3),
