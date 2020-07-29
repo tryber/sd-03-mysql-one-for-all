@@ -12,4 +12,6 @@ BEGIN
   WHERE artists.artist = artist_name;
 END $$ 
 
-DELIMITER;
+DELIMITER ;
+
+CALL albuns_do_artista('Walter Phoenix');
