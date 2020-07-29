@@ -1,4 +1,5 @@
 DELIMITER $$ 
+
 CREATE PROCEDURE albuns_ do_artista (IN artist_name VARCHAR(100)) 
 BEGIN
   SELECT artist_name AS artista,
