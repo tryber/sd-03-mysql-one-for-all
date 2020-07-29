@@ -14,3 +14,4 @@ CREATE VIEW cancoes_premium AS
     ORDER BY 1;
     
     
+    
