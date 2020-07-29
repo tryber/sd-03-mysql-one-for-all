@@ -99,18 +99,18 @@ VALUES
 ('Reflections Of Magic',1),
 ('Time Fireworks',2),
 ('Troubles Of My Inner Fire', 2),
- ('She Knows',3),
+('She Knows',3),
 ("Sweetie, Let's Go Wild",3),
 ('Honey, So Do I',3),
 ('Magic Circus',3),
 ("Honey, Let's Be Silly",4),
- ('Diamond Power',4),
+('Diamond Power',4),
 ('Home Forever',4),
 ('Rock His Everything',	4),
 ('Celebration Of More',	4),
 ('Fantasy For Me',4),
 ('Without My Streets',5),
- ('Words Of Her Life',5),
+('Words Of Her Life',5),
 ('Thang Of Thunder',5);
 
 INSERT INTO historico_reproducao(cancoes_id, usuario_id)
