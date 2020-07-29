@@ -12,4 +12,5 @@ CREATE VIEW cancoes_premium AS
         usuario.plan_id IN (2 , 3)
     GROUP BY (cancoes.name)
     ORDER BY 1;
+     
     
