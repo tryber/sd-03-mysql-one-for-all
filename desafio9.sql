@@ -7,7 +7,7 @@ BEGIN
 SELECT artists.name AS `artista`, albuns.title AS `album`
 FROM albuns
 INNER JOIN artists
-ON artists.id = albuns.artist_id AND `artista` = artist_name;
+ON artists.id = albuns.artist_id AND artists.name = artist_name;
 END $$
 
 DELIMITER ;
