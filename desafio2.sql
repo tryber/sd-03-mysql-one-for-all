@@ -12,4 +12,3 @@ CREATE VIEW estatisticas_musicais AS
     FROM
         SpotifyClone.songs AS cancoes;
 
-
