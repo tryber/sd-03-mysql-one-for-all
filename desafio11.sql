@@ -11,4 +11,3 @@ CREATE VIEW cancoes_premium AS
         U.plano_id IN (2 , 3)
     GROUP BY nome
     ORDER BY nome;
-    
