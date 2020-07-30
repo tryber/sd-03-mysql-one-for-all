@@ -5,9 +5,12 @@
 -- Seu resultado deve estar ordenado em ordem decrescente, baseando-se na quantidade de seguidores. Em caso de empate, ordene os resultados pelo nome da pessoa artista em ordem alfabética.
 
 CREATE VIEW top_3_artistas AS
-SELECT A.artist_name AS artista, COUNT(F.user_id) AS seguidores
-FROM artists AS A
-INNER JOIN followers AS F ON F.artist_id = A.id
-GROUP BY A.artist_name
+SELECT  
+(SELECT artist_name FROM artists WHERE artists.id = followers.artist_id) AS artista, 
+COUNT(*) AS seguidores
+FROM followers
+GROUP BY artista
 ORDER BY seguidores DESC, artista
 LIMIT 3;
+
+SELECT * FROM top_3_artistas;

@@ -13,3 +13,5 @@ INNER JOIN albums AS B ON B.artist_id = A.id
 INNER JOIN followers AS F ON A.id = F.artist_id
 GROUP BY artista, album
 ORDER BY seguidores DESC, artista, album;
+
+SELECT * FROM perfil_artistas;
