@@ -7,4 +7,4 @@ CREATE VIEW `faturamento_atual` AS
     FROM
         planos
             INNER JOIN
-         usuarios ON usuarios.plano_id = planos.plano_id;
+          usuarios ON usuarios.plano_id = planos.plano_id;
