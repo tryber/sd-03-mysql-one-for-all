@@ -126,8 +126,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `SpotifyClone`;
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (1, 'Envious', NULL, 1);
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (2, 'Exuberant', NULL, 1);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (1, 'Envious', '', 1);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (2, 'Exuberant', '', 1);
 INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (3, 'Hallowed ', 'Steam', 2);
 INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (4, 'Incandescent', '', 3);
 INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (5, 'Temporary', 'Culture', 4);
