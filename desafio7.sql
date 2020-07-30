@@ -6,7 +6,7 @@
 
 -- Seus resultados devem estar ordenados de forma decrescente, baseando-se no número de seguidores. Em caso de empate no número de pessoas, ordene os resultados pelo nome da pessoa artista em ordem alfabética e caso há artistas com o mesmo nome, ordene os resultados pelo nome do álbum alfabeticamente.
 
--- CREATE VIEW perfil_artistas AS
+CREATE VIEW perfil_artistas AS
 SELECT A.artist_name AS artista, B.album_name AS album, COUNT(F.artist_id) AS seguidores
 FROM artists AS A
 INNER JOIN albums AS B ON B.artist_id = A.id
