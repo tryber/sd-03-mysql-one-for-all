@@ -1,13 +1,16 @@
 USE SpotifyClone;
+
 DELIMITER $$
-CREATE PROCEDURE albuns_do_artista (IN nome VARCHAR(50))
+
+CREATE PROCEDURE albuns_do_artista (IN nome VARCHAR(100))
 BEGIN
 SELECT
-CONCAT(primeiro_nome, ' ', segundo_nome) AS artista,
-CONCAT(primeiro_nome, ' ', segundo_nome) AS album,
-FROM SpotifyClone.tabela AS A
-INNER JOIN SpotifyClone.tabela AS AL
-WHERE artista = nome;
+ART.primeiro_nome AS artista,
+ALB.primeiro_nome AS album
+FROM albuns AS ALB
+INNER JOIN artista AS ART
+ON ART.id_artista = ALB.artista_id_artista
+AND ART.primeiro_nome = nome;
 END $$
-DELIMITER;
-CALL albuns_do_artista('Walter Phoenix');
+
+DELIMITER ;
