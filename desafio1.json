@@ -9,7 +9,7 @@
   "tabela_que_contem_seguindo_artistas": "followers",
   "coluna_artista": "artist_name",
   "tabela_que_contem_artista": "artists",
-  "coluna_album": "algum_name",
+  "coluna_album": "album_name",
   "tabela_que_contem_album": "albums",
   "coluna_cancoes": "song_name",
   "tabela_que_contem_cancoes": "songs"
