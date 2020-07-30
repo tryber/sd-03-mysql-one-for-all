@@ -72,10 +72,8 @@ CREATE TABLE `cancoes` (
 -- Table `SpotifyClone`.`historico_de_reproducoes`
 -- -----------------------------------------------------
 CREATE TABLE `historico_de_reproducoes` (
-  `id_historico_de_reproducoes` INT NOT NULL AUTO_INCREMENT,
   `usuário_id` INT NOT NULL,
   `id_cancao` INT NOT NULL,
-  PRIMARY KEY (`id_historico_de_reproducoes`),
     FOREIGN KEY (`usuário_id`)
     REFERENCES `usuário` (`id`),
     FOREIGN KEY (`id_cancao`)
@@ -165,20 +163,20 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `SpotifyClone`;
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (1, 1, 1);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (2, 1, 6);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (3, 1, 14);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (4, 1, 16);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (5, 2, 13);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (6, 2, 17);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (7, 2, 2);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (8, 2, 15);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (9, 3, 4);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (10, 3, 16);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (11, 3, 6);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (12, 4, 3);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (13, 4, 18);
-INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`id_historico_de_reproducoes`, `usuário_id`, `id_cancao`) VALUES (14, 4, 11);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (1, 1);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (1, 6);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (1, 14);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (1, 16);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (2, 13);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (2, 17);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (2, 2);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (2, 15);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES (3, 4);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES ( 3, 16);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES ( 3, 6);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES ( 4, 3);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES ( 4, 18);
+INSERT INTO `SpotifyClone`.`historico_de_reproducoes` (`usuário_id`, `id_cancao`) VALUES ( 4, 11);
 
 COMMIT;
 
