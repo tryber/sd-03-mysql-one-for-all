@@ -1,5 +1,5 @@
 CREATE VIEW top_3_artistas AS 
-SELECT CONCAT(A.primeiro_nome, ' ', A.segundo_nome) AS artista,
+SELECT CONCAT(A.primeiro_nome) AS artista,
 COUNT(S.usuário_id) AS seguidores
 FROM SpotifyClone.seguindo_artistas AS S
 INNER JOIN SpotifyClone.artista AS A

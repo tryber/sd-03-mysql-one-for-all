@@ -16,8 +16,7 @@ CREATE TABLE `plano` (
 -- -----------------------------------------------------
 CREATE TABLE `artista` (
   `id_artista` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  `primeiro_nome` VARCHAR(50) NOT NULL,
-  `segundo_nome` VARCHAR(50)
+  `primeiro_nome` VARCHAR(50) NOT NULL
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -50,7 +49,6 @@ CREATE TABLE `seguindo_artistas` (
 CREATE TABLE `albuns` (
   `id_albun` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `primeiro_nome` VARCHAR(50) NOT NULL,
-  `segundo_nome` VARCHAR(50),
   `artista_id_artista` INT NOT NULL,
     FOREIGN KEY (`artista_id_artista`)
     REFERENCES `artista` (`id_artista`)
@@ -113,10 +111,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `SpotifyClone`;
-INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`, `segundo_nome`) VALUES (1, 'Walter', 'Phoenix');
-INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`, `segundo_nome`) VALUES (2, 'Peter', ' Strong');
-INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`, `segundo_nome`) VALUES (3, 'Lance', 'Day');
-INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`, `segundo_nome`) VALUES (4, 'Freedie', 'Shannon');
+INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`) VALUES (1, 'Walter Phoenix');
+INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`) VALUES (2, 'Peter Strong');
+INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`) VALUES (3, 'Lance Day');
+INSERT INTO `SpotifyClone`.`artista` (`id_artista`, `primeiro_nome`) VALUES (4, 'Freedie Shannon');
 
 COMMIT;
 
@@ -126,11 +124,11 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `SpotifyClone`;
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (1, 'Envious', '', 1);
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (2, 'Exuberant', '', 1);
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (3, 'Hallowed ', 'Steam', 2);
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (4, 'Incandescent', '', 3);
-INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `segundo_nome`, `artista_id_artista`) VALUES (5, 'Temporary', 'Culture', 4);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `artista_id_artista`) VALUES (1, 'Envious', 1);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `artista_id_artista`) VALUES (2, 'Exuberant', 1);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `artista_id_artista`) VALUES (3, 'Hallowed Steam', 2);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `artista_id_artista`) VALUES (4, 'Incandescent', 3);
+INSERT INTO `SpotifyClone`.`albuns` (`id_albun`, `primeiro_nome`, `artista_id_artista`) VALUES (5, 'Temporary Culture', 4);
 
 COMMIT;
 
