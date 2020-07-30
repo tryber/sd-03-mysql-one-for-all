@@ -11,11 +11,11 @@ DELIMITER $$
 
 CREATE PROCEDURE albuns_do_artista(IN nome_artista VARCHAR(15))
 BEGIN
-	SELECT A.artist_name as artista, B.album_name as album
-    FROM albums AS B
-    JOIN artists as A ON B.artist_id = A.id
-    WHERE artist_name = nome_artista
-    ORDER by album;
+SELECT A.artist_name as artista, B.album_name as album
+FROM albums AS B
+JOIN artists as A ON B.artist_id = A.id
+WHERE artist_name = nome_artista
+ORDER by album;
 END $$
 DELIMITER ;
 
