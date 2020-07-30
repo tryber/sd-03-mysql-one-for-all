@@ -2,11 +2,11 @@ DELIMITER $$
 CREATE PROCEDURE albuns_do_artista (IN name_user VARCHAR(40))
 BEGIN
 SELECT
-ART.primeiro_nome AS artista,
-ALB.primeiro_nome AS album
-FROM albuns AS al
+ar.artista_name AS artista,
+al.album_name AS album
+FROM album AS al
 INNER JOIN artista AS ar
-ON ar.id_artista = al.artista_id_artista
-AND ar.primeiro_nome = name_user;
+ON ar.artista_id = al.artista_id
+AND ar.artista_name = name_user;
 END $$
 DELIMITER ;
