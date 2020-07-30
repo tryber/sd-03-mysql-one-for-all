@@ -1,5 +1,5 @@
   CREATE VIEW `perfil_artistas` 
-   AS SELECT a.artista_name AS `artista`,
+   AS SELECT a.artista_name AS  `artista`,
 al.album_name AS `album`, 
 COUNT(sa.artista_id) As `seguidores`
 FROM seguindo_artista sa
