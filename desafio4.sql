@@ -13,4 +13,4 @@ GROUP BY artista
 ORDER BY seguidores DESC, artista
 LIMIT 3;
 
-SELECT * FROM top_3_artistas;
+-- SELECT * FROM top_3_artistas;
