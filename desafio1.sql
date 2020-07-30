@@ -46,6 +46,7 @@ CREATE TABLE historico_reproducao (
 CREATE TABLE seguindo_artista (
   usuario_id INT,
   artista_id INT,
+  PRIMARY KEY (usuario_id, artista_id),
   FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
   FOREIGN KEY (artista_id) REFERENCES artista(artista_id)
 );
