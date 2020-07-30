@@ -5,10 +5,10 @@ CREATE TRIGGER trigger_usuario_delete
 AFTER DELETE ON users
 FOR EACH ROW
 BEGIN
-DELETE FROM track_history WHERE user_id = 1;
-DELETE FROM followers WHERE user_id = 1;
+DELETE FROM track_history WHERE user_id = OLD.id;
+DELETE FROM followers WHERE user_id = OLD.id;
 END; $$
 DELIMITER ;
 
-DELETE FROM users
-WHERE user_name = 'Thati';
+-- DELETE FROM users
+-- WHERE user_name = 'Thati';

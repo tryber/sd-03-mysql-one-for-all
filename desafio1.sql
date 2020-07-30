@@ -36,17 +36,17 @@ FOREIGN KEY (album_id) REFERENCES albums(id)
 ) engine = InnoDB;
 
 CREATE TABLE track_history(
-id INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT(2) NOT NULL,
 song_id INT(2) NOT NULL,
+PRIMARY KEY (user_id, song_id),
 FOREIGN KEY (user_id) REFERENCES users(id),
 FOREIGN KEY (song_id) REFERENCES songs(id)
 ) engine = InnoDB;
 
 CREATE TABLE followers(
-id INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT(2) NOT NULL,
 artist_id INT(2) NOT NULL,
+PRIMARY KEY (user_id, artist_id),
 FOREIGN KEY (user_id) REFERENCES users(id),
 FOREIGN KEY (artist_id) REFERENCES artists(id)
 ) engine = InnoDB;
@@ -99,30 +99,30 @@ VALUES
   (17, 'Rock His Everything', 4),
   (18, 'Honey, Let\'s Be Silly', 4);
 
-INSERT INTO track_history (id, user_id, song_id) 
+INSERT INTO track_history (user_id, song_id) 
 VALUES 
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 1, 4),
-(5, 2, 5),
-(6, 2, 6),
-(7, 2, 7),
-(8, 2, 18),
-(9, 3, 9),
-(10, 3, 4),
-(11, 3, 2),
-(12, 4, 10),
-(13, 4, 11),
-(14, 4, 12);
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(2, 18),
+(3, 9),
+(3, 4),
+(3, 2),
+(4, 10),
+(4, 11),
+(4, 12);
 
-INSERT INTO followers (id, user_id, artist_id)
+INSERT INTO followers (user_id, artist_id)
 VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 2, 1),
-(5, 2, 3),
-(6, 3, 1),
-(7, 3, 4),
-(8, 4, 2);
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 1),
+(2, 3),
+(3, 1),
+(3, 4),
+(4, 2);
