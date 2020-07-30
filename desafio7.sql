@@ -7,5 +7,5 @@ INNER JOIN artista a
 ON a.artista_id = sa.artista_id
 INNER JOIN album AS al
 ON a.artista_id = al.artista_id
-GROUP BY `album`
+GROUP BY `album`, `artista`
 ORDER BY 1 DESC, 2 ASC
