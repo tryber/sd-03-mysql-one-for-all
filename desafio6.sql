@@ -10,4 +10,3 @@ name,
 (SELECT price FROM SpotifyClone.plan WHERE id_plan = U.id_plan) AS price
 FROM SpotifyClone.users AS U
 ) AS users_with_plan_price;
-    
