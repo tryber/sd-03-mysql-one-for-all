@@ -7,4 +7,4 @@ BEGIN
 DELETE FROM historico_reproducao WHERE OLD.usuario_id= usuario_id;
 DELETE FROM seguindo_artista WHERE usuario_id = OLD.usuario_id;
 END $$
-DELIMITER ;
+DELIMITER;
