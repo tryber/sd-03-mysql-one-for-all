@@ -40,7 +40,8 @@ CREATE TABLE `seguindo_artistas` (
   `id_artista` INT NOT NULL,
     FOREIGN KEY (`usuário_id`)
     REFERENCES `usuário` (`id`),FOREIGN KEY (`id_artista`)
-    REFERENCES `artista` (`id_artista`)
+    REFERENCES `artista` (`id_artista`),
+    PRIMARY KEY (`usuário_id`, `id_artista`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -77,7 +78,8 @@ CREATE TABLE `historico_de_reproducoes` (
     FOREIGN KEY (`usuário_id`)
     REFERENCES `usuário` (`id`),
     FOREIGN KEY (`id_cancao`)
-    REFERENCES `cancoes` (`id_cancao`)
+    REFERENCES `cancoes` (`id_cancao`),
+    PRIMARY KEY (`usuário_id`, `id_cancao`)
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
