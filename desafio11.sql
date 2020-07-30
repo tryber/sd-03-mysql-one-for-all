@@ -1,4 +1,4 @@
--- 11. Crie uma VIEW chamada cancoes_premium que exiba o nome e a quantidade de vezes que cada canção foi tocada por pessoas usuárias do plano familiar ou universitário, de acordo com os detalhes a seguir:
+-- 11. Crie uma VIEW chamada cancoes_premium que exiba o nome e a quantidade de vezes que cada canção foi tocada por usuárias do plano familiar ou universitário, de acordo com os detalhes a seguir:
 
 -- A primeira coluna deve exibir o nome da canção, com o alias "nome";
 -- A segunda coluna deve exibir a quantidade de pessoas que já escutaram aquela canção, com o alias "reproducoes";

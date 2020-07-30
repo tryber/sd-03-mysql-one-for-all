@@ -13,7 +13,3 @@ SELECT
 (SELECT MAX(plan_price) FROM subscrition_plans) AS faturamento_maximo,
 (SELECT ROUND(SUM(plan_price)/4, 2) FROM subscrition_plans) AS faturamento_medio,
 (SELECT ROUND(SUM(plan_price), 2) FROM subscrition_plans) AS faturamento_total;
-
--- SELECT SUM(P.plan_price) FROM 
--- users as U
--- JOIN subscrition_plans as P ON U.plan_id = P.id;

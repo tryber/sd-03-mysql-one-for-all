@@ -1,4 +1,4 @@
--- 10. Crie uma function chamada de quantidade_musicas_no_historico que exibe a quantidade de músicas que estão presentes atualmente no histórico de reprodução de uma pessoa. Ao receber o código identificador da pessoa, exiba a quantidade de canções em seu histórico de reprodução.
+-- 10. Crie uma function chamada de quantidade_musicas_no_historico que exibe a quantidade de músicas que estão presentes atualmente no histórico de reprodução de um usuário. Ao receber o código identificador da usuária, exiba a quantidade de canções em seu histórico de reprodução.
 
 USE spotifyclone;
 DELIMITER $$

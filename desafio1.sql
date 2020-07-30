@@ -36,7 +36,7 @@ FOREIGN KEY (album_id) REFERENCES albums(id)
 ) engine = InnoDB;
 
 CREATE TABLE track_history(
-id INT PRIMARY KEY AUTO_INCREMENT,
+-- id INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT(2) NOT NULL,
 song_id INT(2) NOT NULL,
 FOREIGN KEY (user_id) REFERENCES users(id),
@@ -44,7 +44,7 @@ FOREIGN KEY (song_id) REFERENCES songs(id)
 ) engine = InnoDB;
 
 CREATE TABLE followers(
-id INT PRIMARY KEY AUTO_INCREMENT,
+-- id INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT(2) NOT NULL,
 artist_id INT(2) NOT NULL,
 FOREIGN KEY (user_id) REFERENCES users(id),
