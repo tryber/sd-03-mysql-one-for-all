@@ -10,4 +10,4 @@ SELECT
 FROM
     SpotifyClone.play_history
 GROUP BY song_id
-ORDER BY reproducoes DESC , cancao;
+ORDER BY reproducoes DESC , cancao LIMIT 2;
