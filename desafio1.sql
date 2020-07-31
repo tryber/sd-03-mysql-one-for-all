@@ -128,7 +128,7 @@ START TRANSACTION;
 USE `SpotifyClone`;
 INSERT INTO `SpotifyClone`.`artists` (`artist_id`, `artist_name`) VALUES (1, 'Walter Phoenix');
 INSERT INTO `SpotifyClone`.`artists` (`artist_id`, `artist_name`) VALUES (2, 'Peter Strong');
-INSERT INTO `SpotifyClone`.`artists` (`artist_id`, `artist_name`) VALUES (3, 'Lance Day ');
+INSERT INTO `SpotifyClone`.`artists` (`artist_id`, `artist_name`) VALUES (3, 'Lance Day');
 INSERT INTO `SpotifyClone`.`artists` (`artist_id`, `artist_name`) VALUES (4, 'Freedie Shannon');
 
 COMMIT;
@@ -209,7 +209,7 @@ INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) 
 INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (2, 1);
 INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (2, 3);
 INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (3, 2);
-INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (3, 3);
+INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (3, 1);
 INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (4, 4);
 
 COMMIT;
