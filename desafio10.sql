@@ -8,7 +8,7 @@ BEGIN
 DECLARE qtd INT;
 SELECT COUNT(song_id)
 FROM Reproduction_History
-WHERE Reproduction_history.user_id = user_id INTO qtd;
+WHERE Reproduction_History.user_id = user_id INTO qtd;
 RETURN qtd;
 END $$
 
