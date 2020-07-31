@@ -8,7 +8,7 @@ FROM historico_reproducao hr
 INNER JOIN usuarios us
 ON us.usuario_id = hr.usuario_id
 WHERE
-us.usuario = nome;
+us.usuario = nome INTO musicas;
 RETURN musicas;
 END $$
 DELIMITER ;
