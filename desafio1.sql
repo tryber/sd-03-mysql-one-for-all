@@ -142,7 +142,7 @@ INSERT INTO `SpotifyClone`.`albums` (`album_id`, `album_name`, `artist_id`) VALU
 INSERT INTO `SpotifyClone`.`albums` (`album_id`, `album_name`, `artist_id`) VALUES (2, 'Exuberant', 1);
 INSERT INTO `SpotifyClone`.`albums` (`album_id`, `album_name`, `artist_id`) VALUES (3, 'Hallowed Steam', 2);
 INSERT INTO `SpotifyClone`.`albums` (`album_id`, `album_name`, `artist_id`) VALUES (4, 'Incandescent', 3);
-INSERT INTO `SpotifyClone`.`albums` (`album_id`, `album_name`, `artist_id`) VALUES (5, 'Temporary Culture Freedie Shannon', 4);
+INSERT INTO `SpotifyClone`.`albums` (`album_id`, `album_name`, `artist_id`) VALUES (5, 'Temporary Culture', 4);
 
 COMMIT;
 
