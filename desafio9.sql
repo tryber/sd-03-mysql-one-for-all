@@ -1,7 +1,13 @@
-DELIMITER $$ CREATE PROCEDURE albuns_do_artista (IN nome_artista VARCHAR(30)) BEGINSELECT A.artist AS artista,
-          AL.album AS album
-FROM SpotifyClone.albuns AS AL
-INNER JOIN SpotifyClone.artists AS A
-    ON A.artist_id = AL.artist_id
-WHERE artist = nome_artista;
-    END $$ DELIMITER ; 
+USE SpotifyClone;
+
+DELIMITER $$
+
+CREATE PROCEDURE albuns_do_artista (IN nome_artista VARCHAR(100))
+BEGIN
+SELECT nome_artista AS 'artista', album.nome AS 'album'
+FROM album AS album
+INNER JOIN artista AS artista ON artista.id = album.artista_id
+AND artista.nome = nome_artista;
+END $$
+
+DELIMITER ;
