@@ -6,9 +6,9 @@ CREATE VIEW faturamento_atual ASSELECT ROUND(MIN(price),
           2) AS faturamento_medio,
           ROUND(SUM(price),
           2) AS faturamento_total
-FROM 
+FROM
     (SELECT name,
-         
+      
         (SELECT price
         FROM SpotifyClone.plan
         WHERE id_plan = U.id_plan) AS price
