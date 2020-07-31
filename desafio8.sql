@@ -1,6 +1,6 @@
 DELIMITER $$
 CREATE TRIGGER trigger_usuario_delete 
-  BEFORE DELETE ON SpotifyClone.users 
+  AFTER DELETE ON SpotifyClone.users 
   FOR EACH ROW BEGIN 
   DELETE FROM 
   SpotifyClone.following_artists 
