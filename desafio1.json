@@ -6,7 +6,7 @@
   "coluna_historico_de_reproducoes": "musica_id",
   "tabela_que_contem_historico_de_reproducoes": "historico_usuario",
   "coluna_seguindo_artistas": "artista_id",
-  "tabela_que_contem_seguindo_artistas": "seguindo_artista",
+  "tabela_que_contem_seguindo_artistas": "seguindo_artistas",
   "coluna_artista": "nome",
   "tabela_que_contem_artista": "artistas",
   "coluna_album": "nome",
