@@ -219,4 +219,3 @@ INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) 
 INSERT INTO `SpotifyClone`.`artists_followed_by_users` (`user_id`, `artist_id`) VALUES (4, 4);
 
 COMMIT;
-
