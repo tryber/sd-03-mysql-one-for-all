@@ -167,7 +167,7 @@ INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (
 INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (12, 'Rock Hist Everything', 4);
 INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (13, 'Home Forever', 4);
 INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (14, 'Diamond Power', 4);
-INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (15, 'Honey, Lets\'s Be Silly', 4);
+INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (15, 'Honey, Let\'s Be Silly', 4);
 INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (16, 'Thang Of Thunder', 5);
 INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (17, 'Words Of Her Life', 5);
 INSERT INTO `SpotifyClone`.`songs` (`song_id`, `song_name`, `album_id`) VALUES (18, 'Without My Streets', 5);
