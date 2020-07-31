@@ -1,5 +1,6 @@
 use spotifyclone;
-SELECT cancoes.cancoes_name AS `nome`, COUNT(historico_reproducao.cancoes_id) AS `reproducoes`
+CREATE VIEW `cancoes_premium`
+AS SELECT cancoes.cancoes_name AS `nome`, COUNT(historico_reproducao.cancoes_id) AS `reproducoes`
 FROM historico_reproducao
 INNER JOIN  cancoes
 ON cancoes.cancoes_id = historico_reproducao.cancoes_id
