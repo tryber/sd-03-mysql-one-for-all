@@ -1,4 +1,4 @@
- CREATE VIEW top_3_artistas ASSELECT 
+  CREATE VIEW top_3_artistas ASSELECT 
     (SELECT artist
     FROM SpotifyClone.artists
     WHERE artist_id = UA.artist_id) AS artista, COUNT(*) AS seguidores

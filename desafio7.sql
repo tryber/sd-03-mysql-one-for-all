@@ -1,12 +1,12 @@
 CREATE VIEW perfil_artistas ASSELECT A.artist AS artista,
-         AL.album AS album,
-         UA.seguidores
+          AL.album AS album,
+          UA.seguidores
 FROM SpotifyClone.artists AS A
 INNER JOIN SpotifyClone.albuns AS AL
     ON A.artist_id = AL.artist_id
 INNER JOIN 
     (SELECT artist_id,
-         COUNT(*) AS seguidores
+          COUNT(*) AS seguidores
     FROM SpotifyClone.users_artists
     GROUP BY  artist_id ) AS UA
     ON UA.artist_id = A.artist_id

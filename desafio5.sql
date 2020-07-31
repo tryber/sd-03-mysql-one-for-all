@@ -1,5 +1,5 @@
 CREATE VIEW top_2_hits_do_momento ASSELECT S.song AS cancao,
-         COUNT(*) AS reproducoes
+          COUNT(*) AS reproducoes
 FROM SpotifyClone.reproduction_history AS RH
 INNER JOIN SpotifyClone.songs AS S
     ON S.song_id = RH.song_id
