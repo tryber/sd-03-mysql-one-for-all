@@ -1,8 +1,7 @@
--- -----------------------------------------------------
--- Schema SpotifyClone
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `SpotifyClone` ;
-USE `SpotifyClone` ;
+
+DROP DATABASE IF EXISTS SpotifyClone;
+CREATE DATABASE SpotifyClone;
+USE SpotifyClone;
 
 -- -----------------------------------------------------
 -- Table `SpotifyClone`.`plans`
@@ -96,11 +95,6 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`artists_followed_by_users` (
     REFERENCES `SpotifyClone`.`artists` (`artist_id`)
 )
 ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
 -- Data for table `SpotifyClone`.`plans`
