@@ -13,7 +13,7 @@ PRIMARY KEY (plan_id)
 
 INSERT INTO plan (plan, price)
 VALUES
-	("gratuito",0),("familiar", 7.99),("universitário", 5.99);
+("gratuito",0),("familiar", 7.99),("universitário", 5.99);
 
 CREATE TABLE user(
 `user_id` INT NOT NULL AUTO_INCREMENT,
@@ -26,7 +26,7 @@ FOREIGN KEY (plan_id) REFERENCES plan(plan_id)
 
 INSERT INTO user (user, age, plan_id)
 VALUES
-	("Thati", 23, 1),("Cintia", 35, 2),("Bill", 20, 3),("Roger", 45, 1);
+("Thati", 23, 1),("Cintia", 35, 2),("Bill", 20, 3),("Roger", 45, 1);
 
 CREATE TABLE artist(
 artist_id INT NOT NULL AUTO_INCREMENT,
