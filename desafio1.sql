@@ -20,7 +20,7 @@ CREATE TABLE users(
 
 CREATE TABLE artists(
     artist_id INT PRIMARY KEY auto_increment,
-    artist VARCHAR(30) NOT NULL
+    artista VARCHAR(30) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE albuns(
