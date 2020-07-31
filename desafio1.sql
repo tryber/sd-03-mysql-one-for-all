@@ -9,7 +9,7 @@ USE SpotifyClone;
 CREATE TABLE IF NOT EXISTS `SpotifyClone`.`plans` (
   `plan_id` INT NOT NULL AUTO_INCREMENT,
   `plan_name` VARCHAR(45) NULL,
-  `plan_value` FLOAT NULL,
+  `plan_value` DECIMAL(4,2) NULL,
   PRIMARY KEY (`plan_id`))
 ENGINE = InnoDB;
 
@@ -25,8 +25,7 @@ CREATE TABLE IF NOT EXISTS `SpotifyClone`.`users` (
   FOREIGN KEY (`plan_id`)
     REFERENCES `SpotifyClone`.`plans` (`plan_id`)
 )
-ENGINE = InnoDB
-AUTO_INCREMENT = 1;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
