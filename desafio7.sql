@@ -8,4 +8,4 @@ ON a.artist_id = uf.artist_id
 group by artist,artist_id) t
 JOIN SpotifyClone.album a
 ON a.artist_id = t.artist_id
-order BY `seguidores`desc, artista
+order BY `seguidores`desc, artista, album
