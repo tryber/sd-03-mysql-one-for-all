@@ -9,5 +9,5 @@ BEGIN
     WHERE user_id LIKE (
         SELECT name FROM SpotifyClone.users WHERE name LIKE user_name)
         INTO qt_song_history;
-	RETURN qt_empregados;
+RETURN qt_song_history;
 END $$
