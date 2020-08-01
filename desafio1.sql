@@ -49,9 +49,9 @@ CREATE TABLE play_history(
 CREATE TABLE following_artists(
     user_id INT NOT NULL ,
     artist_id INT NOT NULL,
-    PRIMARY KEY (user_id, artist_id),
-    FOREIGN KEY(user_id) REFERENCES users(id),
-    FOREIGN KEY(artist_id) REFERENCES artists(id)
+    PRIMARY KEY (artist_id, user_id),
+    FOREIGN KEY(artist_id) REFERENCES artists(id),
+    FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
 INSERT INTO plans(name, price)
@@ -121,13 +121,13 @@ VALUES
     (4, 18),
     (4, 11);
 
-INSERT INTO following_artists(user_id, artist_id)
+INSERT INTO following_artists(artist_id, user_id)
 VALUES
     (1, 1),
-    (1, 4),
-    (1, 3),
-    (2, 1),
-    (2, 3),
-    (3, 2),
+    (4, 1),
     (3, 1),
+    (1, 2),
+    (3, 2),
+    (2, 3),
+    (1, 3),
     (4, 4);
