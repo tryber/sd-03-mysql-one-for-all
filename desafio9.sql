@@ -1,7 +1,7 @@
 DELIMITER $$
 CREATE PROCEDURE albuns_do_artista(IN artist_name VARCHAR(30))
 BEGIN
-SELECT 
+    (SELECT 
     *
 FROM
     (SELECT 
