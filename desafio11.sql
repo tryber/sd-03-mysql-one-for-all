@@ -1,15 +1,10 @@
-SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
-CREATE VIEW cancoes_premium AS
-SELECT * FROM(
-    SELECT
-    (SELECT
-      name FROM SpotifyClone.songs
-        WHERE id = song_id
-    ) AS nome,
-    (SELECT 
-        COUNT(user_id) FROM SpotifyClone.users
-        WHERE user_id = id AND plan_id NOT IN (1)
-    ) AS reproducoes FROM SpotifyClone.play_history
+CREATE VIEW cancoes_premium AS SELECT 
+    song.name AS nome, COUNT(user.id) AS reproducoes
+FROM
+    SpotifyClone.play_history
+        INNER JOIN
+    songs AS song ON song.id = song_id
+        INNER JOIN
+    users AS user ON user_id = user.id AND user.plan_id <> 1
 GROUP BY nome
-ORDER BY nome
-) AS A WHERE reproducoes IS NOT NULL;
+ORDER BY nome;
