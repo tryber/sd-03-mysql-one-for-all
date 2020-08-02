@@ -1,3 +1,5 @@
+DELIMITER $$
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 CREATE VIEW cancoes_premium AS
 SELECT * FROM(
     SELECT
@@ -12,3 +14,6 @@ SELECT * FROM(
 GROUP BY nome
 ORDER BY nome
 ) AS A WHERE reproducoes IS NOT NULL;
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'','ONLY_FULL_GROUP_BY'));
+$$
+DELIMITER ;
