@@ -4,7 +4,7 @@ CREATE VIEW cancoes_premium AS
 SELECT * FROM(
     SELECT
     (SELECT
-     name FROM SpotifyClone.songs
+      name FROM SpotifyClone.songs
         WHERE id = song_id
     ) AS nome,
     (SELECT 
