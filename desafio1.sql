@@ -72,7 +72,7 @@ VALUES
 ('Peter Strong'),
 ('Lance Day'),
 ('Freedie Shannon');
-  
+
 INSERT INTO users (name, age, plan_id)
 VALUES
 ('Thati', 23, 1),
