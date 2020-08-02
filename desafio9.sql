@@ -1,3 +1,4 @@
+DELIMITER $$
 CREATE PROCEDURE albuns_do_artista(IN artist_name VARCHAR(30))
     SELECT * FROM
         (SELECT 
@@ -12,3 +13,5 @@ CREATE PROCEDURE albuns_do_artista(IN artist_name VARCHAR(30))
             SpotifyClone.albuns
         ORDER BY artista) AS A
     WHERE artista = artist_name;
+$$
+DELIMITER ;
