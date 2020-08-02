@@ -4,83 +4,83 @@ CREATE DATABASE SpotifyClone;
 
 USE SpotifyClone;
 
-CREATE TABLE plan (
+CREATE TABLE plano (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    value_plan DECIMAL(5, 2) NOT NULL
+    nome VARCHAR(50) NOT NULL,
+    valor_plano DECIMAL(5, 2) NOT NULL
 )  ENGINE=INNODB;
 
-CREATE TABLE artist (
+CREATE TABLE artista (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL
+    nome VARCHAR(100) NOT NULL
 )  ENGINE=INNODB;
 
-CREATE TABLE users (
+CREATE TABLE usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    age INT NOT NULL,
-    plan_id INT NOT NULL,
-    FOREIGN KEY (plan_id)
-        REFERENCES plan (id)
+    nome VARCHAR(100) NOT NULL,
+    idade INT NOT NULL,
+    plano_id INT NOT NULL,
+    FOREIGN KEY (plano_id)
+        REFERENCES plano (id)
 )  ENGINE=INNODB;
 
-CREATE TABLE artists (
-    user_id INT NOT NULL,
-    artist_id INT NOT NULL,
-    FOREIGN KEY (user_id)
-        REFERENCES user (id),
-    FOREIGN KEY (artist_id)
-        REFERENCES artist (id),
-    PRIMARY KEY (user_id , artist_id)
+CREATE TABLE seguindo_artista (
+    usuario_id INT NOT NULL,
+    artista_id INT NOT NULL,
+    FOREIGN KEY (usuario_id)
+        REFERENCES usuario (id),
+    FOREIGN KEY (artista_id)
+        REFERENCES artista (id),
+    PRIMARY KEY (usuario_id , artista_id)
 )  ENGINE=INNODB;
 
 CREATE TABLE album (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
-    artist_id INT NOT NULL,
-    FOREIGN KEY (artist_id)
-        REFERENCES artist (id)
+    nome VARCHAR(100) NOT NULL,
+    artista_id INT NOT NULL,
+    FOREIGN KEY (artista_id)
+        REFERENCES artista (id)
 )  ENGINE=INNODB;
 
-CREATE TABLE songs (
+CREATE TABLE cancoes (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
         REFERENCES album (id)
 )  ENGINE=INNODB;
 
-CREATE TABLE history (
-    user_id INT NOT NULL,
-    song_id INT NOT NULL,
-    FOREIGN KEY (user_id)
-        REFERENCES user (id),
-    FOREIGN KEY (song_id)
-        REFERENCES songs (id),
-    PRIMARY KEY (user_id , song_id)
+CREATE TABLE historico (
+    usuario_id INT NOT NULL,
+    cancao_id INT NOT NULL,
+    FOREIGN KEY (usuario_id)
+        REFERENCES usuario (id),
+    FOREIGN KEY (cancao_id)
+        REFERENCES cancoes (id),
+    PRIMARY KEY (usuario_id , cancao_id)
 )  ENGINE=INNODB;
 
-INSERT INTO plan (name, value_plan)
+INSERT INTO plano (nome, valor_plano)
 VALUES
 ('gratuito', 0),
 ('familiar', 7.99),
 ('universitário', 5.99);
 
-INSERT INTO artist (name)
+INSERT INTO artista (nome)
 VALUES
 ('Walter Phoenix'),
 ('Peter Strong'),
 ('Lance Day'),
 ('Freedie Shannon');
-
-INSERT INTO users (name, age, plan_id)
+  
+INSERT INTO usuario (nome, idade, plano_id)
 VALUES
 ('Thati', 23, 1),
 ('Cintia', 35, 2),
 ('Bill', 20, 3),
 ('Roger', 45, 1);
 
-INSERT INTO artists (user_id, artist_id)
+INSERT INTO seguindo_artista (usuario_id, artista_id)
 VALUES
 (1, 1),
 (1, 4),
@@ -91,7 +91,7 @@ VALUES
 (3,	1),
 (4,	4);
 
-INSERT INTO album (name, artist_id)
+INSERT INTO album (nome, artista_id)
 VALUES
 ('Envious',	1),
 ('Exuberant', 1),
@@ -99,7 +99,7 @@ VALUES
 ('Incandescent', 3),
 ('Temporary Culture', 4);
 
-INSERT INTO songs (name, album_id)
+INSERT INTO cancoes (nome, album_id)
 VALUES
 ('Soul For Us', 1),
 ('Reflections Of Magic', 1),
@@ -120,7 +120,7 @@ VALUES
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
 
-INSERT INTO history (user_id, song_id)
+INSERT INTO historico (usuario_id, cancao_id)
 VALUES
 (1, 1),
 (1, 6),
