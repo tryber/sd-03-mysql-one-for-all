@@ -6,7 +6,7 @@ USE SpotifyClone;
 
 CREATE TABLE plan (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
+    name VARCHAR(30) NOT NULL,
     value_plan DECIMAL(5, 2) NOT NULL
 )  engine=InnoDB;
 
@@ -24,7 +24,7 @@ CREATE TABLE user (
         REFERENCES plan (id)
 )  engine=InnoDB;
 
-CREATE TABLE following_artist (
+CREATE TABLE artists (
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
     FOREIGN KEY (user_id)
@@ -80,17 +80,6 @@ VALUES
 ('Bill', 20, 3),
 ('Roger', 45, 1);
 
-INSERT INTO following_artist (user_id, artist_id)
-VALUES
-(1, 1),
-(1, 4),
-(1,	3),
-(2,	1),
-(2,	3),
-(3,	2),
-(3,	1),
-(4,	4);
-
 INSERT INTO album (name, artist_id)
 VALUES
 ('Envious',	1),
@@ -119,6 +108,17 @@ VALUES
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
+
+INSERT INTO artists (user_id, artist_id)
+VALUES
+(1, 1),
+(1,	3),
+(1, 4),
+(2,	1),
+(2,	3),
+(3,	2),
+(3,	1),
+(4,	4);
 
 INSERT INTO history (user_id, song_id)
 VALUES
