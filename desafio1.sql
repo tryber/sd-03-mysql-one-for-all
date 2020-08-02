@@ -5,24 +5,24 @@ CREATE DATABASE SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plan (
-    id INT PRIMARY KEY auto_increment,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     value_plan DECIMAL(5, 2) NOT NULL
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
 CREATE TABLE artist (
-    id INT PRIMARY KEY auto_increment,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
-CREATE TABLE user (
-    id INT PRIMARY KEY auto_increment,
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     age INT NOT NULL,
     plan_id INT NOT NULL,
     FOREIGN KEY (plan_id)
         REFERENCES plan (id)
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
 CREATE TABLE artists (
     user_id INT NOT NULL,
@@ -32,23 +32,23 @@ CREATE TABLE artists (
     FOREIGN KEY (artist_id)
         REFERENCES artist (id),
     PRIMARY KEY (user_id , artist_id)
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
 CREATE TABLE album (
-    id INT PRIMARY KEY auto_increment,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     artist_id INT NOT NULL,
     FOREIGN KEY (artist_id)
         REFERENCES artist (id)
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
 CREATE TABLE songs (
-    id INT PRIMARY KEY auto_increment,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
         REFERENCES album (id)
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
 CREATE TABLE history (
     user_id INT NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE history (
     FOREIGN KEY (song_id)
         REFERENCES songs (id),
     PRIMARY KEY (user_id , song_id)
-)  engine=InnoDB;
+)  ENGINE=INNODB;
 
 INSERT INTO plan (name, value_plan)
 VALUES
@@ -72,13 +72,24 @@ VALUES
 ('Peter Strong'),
 ('Lance Day'),
 ('Freedie Shannon');
-
-INSERT INTO user (name, age, plan_id)
+  
+INSERT INTO users (name, age, plan_id)
 VALUES
 ('Thati', 23, 1),
 ('Cintia', 35, 2),
 ('Bill', 20, 3),
 ('Roger', 45, 1);
+
+INSERT INTO artists (user_id, artist_id)
+VALUES
+(1, 1),
+(1, 4),
+(1,	3),
+(2,	1),
+(2,	3),
+(3,	2),
+(3,	1),
+(4,	4);
 
 INSERT INTO album (name, artist_id)
 VALUES
@@ -108,17 +119,6 @@ VALUES
 ('Thang Of Thunder', 5),
 ('Words Of Her Life', 5),
 ('Without My Streets', 5);
-
-INSERT INTO artists (user_id, artist_id)
-VALUES
-(1, 1),
-(1,	3),
-(1, 4),
-(2,	1),
-(2,	3),
-(3,	2),
-(3,	1),
-(4,	4);
 
 INSERT INTO history (user_id, song_id)
 VALUES
