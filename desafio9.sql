@@ -13,7 +13,8 @@ SELECT * FROM
                 name AS album
         FROM
             SpotifyClone.albuns
-        ORDER BY artista) AS A
-    WHERE artista = artist_name;
+        ) AS A
+    WHERE artista = artist_name
+    ORDER BY album;
 END $$
 DELIMITER ;
