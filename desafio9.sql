@@ -1,5 +1,5 @@
 CREATE PROCEDURE SpotifyClone.albuns_do_artista(IN artist_name VARCHAR(30))
-    SELECT * FROM
+SELECT * FROM
         (SELECT 
             (SELECT 
                     name
@@ -11,4 +11,4 @@ CREATE PROCEDURE SpotifyClone.albuns_do_artista(IN artist_name VARCHAR(30))
         FROM
             SpotifyClone.albuns
         ORDER BY artista) AS A
-    WHERE artista = artist_name;
+    WHERE artista = artist_name
