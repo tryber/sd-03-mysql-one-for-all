@@ -72,7 +72,7 @@ VALUES
 ('Peter Strong'),
 ('Lance Day'),
 ('Freedie Shannon');
-  
+
 INSERT INTO usuario (nome, idade, plano_id)
 VALUES
 ('Thati', 23, 1),
@@ -83,8 +83,8 @@ VALUES
 INSERT INTO seguindo_artista (usuario_id, artista_id)
 VALUES
 (1, 1),
-(1, 4),
 (1,	3),
+(1, 4),
 (2,	1),
 (2,	3),
 (3,	2),
