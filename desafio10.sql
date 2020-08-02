@@ -1,4 +1,3 @@
-USE SpotifyClone;
 DELIMITER $$
 CREATE FUNCTION quantidade_musicas_no_historico(
     user_name VARCHAR(30)
@@ -12,3 +11,4 @@ BEGIN
         INTO qt_song_history;
 RETURN qt_song_history;
 END $$
+DELIMITER ;
