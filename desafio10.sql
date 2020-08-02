@@ -1,5 +1,5 @@
 DELIMITER $$
-CREATE FUNCTION quantidade_musicas_no_historico(
+CREATE FUNCTION SpotifyClone.quantidade_musicas_no_historico(
     user_n VARCHAR(30)
 )
 RETURNS INT READS SQL DATA
