@@ -1,7 +1,7 @@
-CREATE VIEW top_3_artistas AS
-SELECT artista.nome AS 'artista', COUNT(seguindo_artista.artista_id) AS 'seguidores'
-FROM SpotifyClone.seguindo_artista AS seguindo_artista
-INNER JOIN SpotifyClone.artista AS artista ON seguindo_artista.artista_id = artista.id
-GROUP BY (seguindo_artista.artista_id)
+CREATE VIEW top_2_hits_do_momento AS
+SELECT cancoes.nome AS 'cancao', COUNT(historico.cancao_id) 'reproducoes'
+FROM SpotifyClone.historico AS historico
+INNER JOIN SpotifyClone.cancoes AS cancoes ON historico.cancao_id = cancoes.id
+GROUP BY (historico.cancao_id)
 ORDER BY 2 DESC, 1
-LIMIT 3;
+LIMIT 2;
