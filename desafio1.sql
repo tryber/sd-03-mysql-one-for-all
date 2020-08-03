@@ -12,7 +12,7 @@ CREATE TABLE plano (
 
 CREATE TABLE artista (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL
+    nome VARCHAR(30) NOT NULL
 )  engine=InnoDB;
 
 CREATE TABLE usuario (
@@ -36,7 +36,7 @@ CREATE TABLE artists (
 
 CREATE TABLE album (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
     artista_id INT NOT NULL,
     FOREIGN KEY (artista_id)
         REFERENCES artista (id)
@@ -44,7 +44,7 @@ CREATE TABLE album (
 
 CREATE TABLE cancoes (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
         REFERENCES album (id)
@@ -63,8 +63,8 @@ CREATE TABLE historico (
 INSERT INTO plano (nome, valor_plano)
 VALUES
 ('gratuito', 0),
-('familiar', 7.99),
 ('universitário', 5.99);
+('familiar', 7.99),
 
 INSERT INTO artista (nome)
 VALUES
