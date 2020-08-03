@@ -42,7 +42,7 @@ REFERENCES album_table(album_id)
 
 CREATE TABLE user_follows(
 usuario INT,
-artista INT,
+artista INT PRIMARY KEY,
 FOREIGN KEY (usuario)
 REFERENCES user_table(user_id),
 FOREIGN KEY (artista)
@@ -51,7 +51,7 @@ REFERENCES artist_table(artist_id)
 
 CREATE TABLE user_history(
 user_id INT,
-song INT,
+song INT PRIMARY KEY,
 FOREIGN KEY (user_id)
 REFERENCES user_table(user_id),
 FOREIGN KEY (song)
