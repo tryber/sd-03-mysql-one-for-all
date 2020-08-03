@@ -1,3 +1,4 @@
+USE SpotifyClone;
 
 DELIMITER $$
 
