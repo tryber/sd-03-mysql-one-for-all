@@ -16,19 +16,19 @@ CREATE TABLE planos(
 ) engine = InnoDB;
 
 CREATE TABLE usuarios(
-	usuario_id INT PRIMARY KEY auto_increment,
-    usuario VARCHAR(30) NOT NULL,
-    idade INT NOT NULL,
-    plano_id INT NOT NULL,
-    FOREIGN KEY (plano_id) REFERENCES planos (plano_id)
+usuario_id INT PRIMARY KEY auto_increment,
+usuario VARCHAR(30) NOT NULL,
+idade INT NOT NULL,
+plano_id INT NOT NULL,
+FOREIGN KEY (plano_id) REFERENCES planos (plano_id)
 ) engine = InnoDB;
 
 CREATE TABLE historico(
-	usuario_id INT NOT NULL,
-    cancao_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, cancao_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
+usuario_id INT NOT NULL,
+cancao_id INT NOT NULL,
+PRIMARY KEY (usuario_id, cancao_id),
+FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
+FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 ) engine = InnoDB;
 
 CREATE TABLE artistas(
@@ -37,20 +37,20 @@ CREATE TABLE artistas(
 ) engine = InnoDB;
 
 CREATE TABLE albuns(
-	album_id INT PRIMARY KEY auto_increment,
-    album VARCHAR(50) NOT NULL,
-    artista_id INT NOT NULL,
-    cancao_id INT NOT NULL,
-    FOREIGN KEY (artista_id) REFERENCES artistas (artista_id),
-    FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
+album_id INT PRIMARY KEY auto_increment,
+album VARCHAR(50) NOT NULL,
+artista_id INT NOT NULL,
+cancao_id INT NOT NULL,
+FOREIGN KEY (artista_id) REFERENCES artistas (artista_id),
+FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 ) engine = InnoDB;
 
 CREATE TABLE seguidores (
-	usuario_id INT NOT NULL,
-    artista_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, artista_id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
-    FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
+usuario_id INT NOT NULL,
+artista_id INT NOT NULL,
+PRIMARY KEY (usuario_id, artista_id),
+FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
+FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 ) engine = InnoDB;
 
 INSERT INTO planos (plano, plano_valor)
@@ -89,56 +89,56 @@ VALUES
   
 INSERT INTO usuarios (usuario, idade, plano_id)
 VALUES
-	("Thati", 23, 1),
-    ("Cintia", 35, 2),
-    ("Bill", 20, 3),
-    ("Roger", 45, 1);
+("Thati", 23, 1),
+("Cintia", 35, 2),
+("Bill", 20, 3),
+("Roger", 45, 1);
     
 INSERT INTO historico (usuario_id, cancao_id)
 VALUES 
-	(1, 1),
-    (1, 6),
-    (1, 14),
-    (1,16),
-    (2, 13),
-    (2, 17),
-    (2, 2),
-    (2, 15),
-    (3, 4),
-    (3, 16),
-    (3, 6),
-    (4, 3),
-    (4, 18),
-    (4, 11);
+(1, 1),
+(1, 6),
+(1, 14),
+(1,16),
+(2, 13),
+(2, 17),
+(2, 2),
+(2, 15),
+(3, 4),
+(3, 16),
+(3, 6),
+(4, 3),
+(4, 18),
+(4, 11);
 
 INSERT INTO albuns(album, artista_id, cancao_id)
 VALUES
-	("Envious", 1, 1),
-    ("Envious", 1, 2),
-    ("Envious", 1, 3),
-    ("Exuberant", 1, 4),
-    ("Exuberant", 1, 5),
-    ("Hallowed Steam", 1, 6),
-    ("Hallowed Steam", 1, 7),
-    ("Hallowed Steam", 1, 8),
-    ("Hallowed Steam", 1, 9),
-    ("Incandescent", 1, 10),
-    ("Incandescent", 1, 11),
-    ("Incandescent", 1, 12),
-    ("Incandescent", 1, 13),
-    ("Incandescent", 1, 14),
-    ("Incandescent", 1, 15),
-    ("Incandescent", 1, 16),
-    ("Incandescent", 1, 17),
-    ("Incandescent", 1, 18);
+("Envious", 1, 1),
+("Envious", 1, 2),
+("Envious", 1, 3),
+("Exuberant", 1, 4),
+("Exuberant", 1, 5),
+("Hallowed Steam", 1, 6),
+("Hallowed Steam", 1, 7),
+("Hallowed Steam", 1, 8),
+("Hallowed Steam", 1, 9),
+("Incandescent", 1, 10),
+("Incandescent", 1, 11),
+("Incandescent", 1, 12),
+("Incandescent", 1, 13),
+("Incandescent", 1, 14),
+("Incandescent", 1, 15),
+("Incandescent", 1, 16),
+("Incandescent", 1, 17),
+("Incandescent", 1, 18);
     
-    INSERT INTO seguidores (usuario_id, artista_id)
-    VALUES
-		(1, 1),
-        (2, 1),
-        (3, 1),
-        (3, 2),
-        (1, 3),
-        (2, 3),
-        (1, 4),
-        (4, 4);
+INSERT INTO seguidores (usuario_id, artista_id)
+VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(3, 2),
+(1, 3),
+(2, 3),
+(1, 4),
+(4, 4);
