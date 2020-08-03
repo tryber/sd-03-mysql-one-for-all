@@ -5,4 +5,5 @@ CREATE VIEW top_3_artistas AS
   INNER JOIN SpotifyClone.artist_table AS art
     ON uf.artista = art.artist_id
   GROUP BY artista
-  ORDER BY 2 DESC;
+  ORDER BY 2 DESC, 1 ASC
+  LIMIT 3;
