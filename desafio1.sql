@@ -42,10 +42,10 @@ REFERENCES album_table(album_id)
 
 CREATE TABLE user_history(
 usuario INT,
-song INT,
+cancao INT,
 FOREIGN KEY (usuario)
 REFERENCES user_table(user_id),
-FOREIGN KEY (song)
+FOREIGN KEY (cancao)
 REFERENCES songs_table(song_id)
 ) engine = innoDB;
 
