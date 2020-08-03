@@ -1,3 +1,4 @@
+CREATE VIEW cancoes_premium AS
 SELECT c.cancao AS cancao, COUNT(*) AS reproducoes
 FROM SpotifyClone.historico AS h
 JOIN SpotifyClone.cancoes AS c
