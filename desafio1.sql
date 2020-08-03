@@ -63,8 +63,8 @@ CREATE TABLE historico (
 INSERT INTO plano (nome, valor_plano)
 VALUES
 ('gratuito', 0),
-('universitário', 5.99);
 ('familiar', 7.99),
+('universitário', 5.99);
 
 INSERT INTO artista (nome)
 VALUES
