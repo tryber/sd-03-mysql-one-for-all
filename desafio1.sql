@@ -40,15 +40,6 @@ FOREIGN KEY (album)
 REFERENCES album_table(album_id)
 ) engine = innoDB;
 
-CREATE TABLE user_follows(
-usuario INT,
-artista INT,
-FOREIGN KEY (usuario)
-REFERENCES user_table(user_id),
-FOREIGN KEY (artista)
-REFERENCES artist_table(artist_id)
-) engine = innoDB;
-
 CREATE TABLE user_history(
 usuario INT,
 song INT,
@@ -56,6 +47,15 @@ FOREIGN KEY (usuario)
 REFERENCES user_table(user_id),
 FOREIGN KEY (song)
 REFERENCES songs_table(song_id)
+) engine = innoDB;
+
+CREATE TABLE user_follows(
+usuario INT,
+artista INT,
+FOREIGN KEY (usuario)
+REFERENCES user_table(user_id),
+FOREIGN KEY (artista)
+REFERENCES artist_table(artist_id)
 ) engine = innoDB;
 
 INSERT INTO user_plan(plano, valor)
