@@ -2,11 +2,13 @@ USE SpotifyClone;
 
 DELIMITER $$
 
-CREATE PROCEDURE albuns_do_artista (IN nome_artista VARCHAR(100))
-BEGIN
-SELECT nome_artista AS 'artista', album.nome AS 'album'
-FROM album AS album INNER JOIN artista AS artista ON artista.id = album.artista_id
-AND artista.nome = nome_artista;
-END $$
+CREATE VIEW cancoes_premium AS
+SELECT cancoes.nome AS 'nome', COUNT(historico.cancao_id) AS 'reproducoes'
+  FROM historico AS historico
+    INNER JOIN cancoes AS cancoes ON cancoes.id = historico.cancao_id
+    INNER JOIN usuario AS usuario ON usuario.id = historico.usuario_id
+    WHERE usuario.plano_id IN (2, 3)
+  GROUP BY (cancoes.nome)
+  ORDER BY 1;
 
 DELIMITER ;
