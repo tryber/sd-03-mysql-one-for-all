@@ -40,9 +40,7 @@ CREATE TABLE albuns(
 album_id INT PRIMARY KEY auto_increment,
 album VARCHAR(50) NOT NULL,
 artista_id INT NOT NULL,
-cancao_id INT NOT NULL,
-FOREIGN KEY (artista_id) REFERENCES artistas (artista_id),
-FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
+FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
 ) engine = InnoDB;
 
 CREATE TABLE seguidores (
@@ -51,6 +49,14 @@ artista_id INT NOT NULL,
 PRIMARY KEY (usuario_id, artista_id),
 FOREIGN KEY (usuario_id) REFERENCES usuarios (usuario_id),
 FOREIGN KEY (artista_id) REFERENCES artistas (artista_id)
+) engine = InnoDB;
+
+CREATE TABLE album_cancoes(
+album_id INT NOT NULL,
+cancao_id INT NOT NULL,
+PRIMARY KEY (album_id, cancao_id),
+FOREIGN KEY (album_id) REFERENCES albuns (album_id),
+FOREIGN KEY (cancao_id) REFERENCES cancoes (cancao_id)
 ) engine = InnoDB;
 
 INSERT INTO planos (plano, plano_valor)
@@ -111,26 +117,13 @@ VALUES
 (4, 18),
 (4, 11);
 
-INSERT INTO albuns(album, artista_id, cancao_id)
+INSERT INTO albuns(album, artista_id)
 VALUES
-("Envious", 1, 1),
-("Envious", 1, 2),
-("Envious", 1, 3),
-("Exuberant", 1, 4),
-("Exuberant", 1, 5),
-("Hallowed Steam", 1, 6),
-("Hallowed Steam", 1, 7),
-("Hallowed Steam", 1, 8),
-("Hallowed Steam", 1, 9),
-("Incandescent", 1, 10),
-("Incandescent", 1, 11),
-("Incandescent", 1, 12),
-("Incandescent", 1, 13),
-("Incandescent", 1, 14),
-("Incandescent", 1, 15),
-("Incandescent", 1, 16),
-("Incandescent", 1, 17),
-("Incandescent", 1, 18);
+("Envious", 1),
+("Exuberant", 1),
+("Hallowed Steam", 2),
+("Incandescent", 3),
+("Temporary Culture", 4);
     
 INSERT INTO seguidores (usuario_id, artista_id)
 VALUES
@@ -142,3 +135,24 @@ VALUES
 (2, 3),
 (1, 4),
 (4, 4);
+
+INSERT INTO album_cancoes (album_id, cancao_id)
+VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 4),
+(2, 5),
+(3, 6),
+(3, 7),
+(3, 8),
+(3, 9),
+(4, 10),
+(4, 11),
+(4, 12),
+(4, 13),
+(4, 14),
+(4, 15),
+(5, 16),
+(5, 17),
+(5, 18);
