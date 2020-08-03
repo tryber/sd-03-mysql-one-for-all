@@ -6,23 +6,23 @@ USE SpotifyClone;
 
 CREATE TABLE plano (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL,
+    nome VARCHAR(30) NOT NULL,
     valor_plano DECIMAL(5, 2) NOT NULL
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 CREATE TABLE artista (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 CREATE TABLE usuario (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
     idade INT NOT NULL,
     plano_id INT NOT NULL,
     FOREIGN KEY (plano_id)
         REFERENCES plano (id)
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 CREATE TABLE artists (
     usuario_id INT NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE artists (
     FOREIGN KEY (artista_id)
         REFERENCES artista (id),
     PRIMARY KEY (usuario_id , artista_id)
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 CREATE TABLE album (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -40,7 +40,7 @@ CREATE TABLE album (
     artista_id INT NOT NULL,
     FOREIGN KEY (artista_id)
         REFERENCES artista (id)
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 CREATE TABLE cancoes (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -48,7 +48,7 @@ CREATE TABLE cancoes (
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
         REFERENCES album (id)
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 CREATE TABLE historico (
     usuario_id INT NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE historico (
     FOREIGN KEY (cancao_id)
         REFERENCES cancoes (id),
     PRIMARY KEY (usuario_id , cancao_id)
-)  ENGINE=INNODB;
+)  engine=InnoDB;
 
 INSERT INTO plano (nome, valor_plano)
 VALUES
