@@ -24,7 +24,7 @@ CREATE TABLE usuario (
         REFERENCES plano (id)
 )  ENGINE=INNODB;
 
-CREATE TABLE seguindo_artista (
+CREATE TABLE artists (
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
     FOREIGN KEY (usuario_id)
@@ -80,7 +80,7 @@ VALUES
 ('Bill', 20, 3),
 ('Roger', 45, 1);
 
-INSERT INTO seguindo_artista (usuario_id, artista_id)
+INSERT INTO artists (usuario_id, artista_id)
 VALUES
 (1, 1),
 (1, 4),
