@@ -37,11 +37,11 @@ FOREIGN KEY (album_id) REFERENCES albuns(album_id)
 )ENGINE=InnoDB;
 
 CREATE TABLE historicos_usuarios(
-historico_usuario_id INT PRIMARY KEY AUTO_INCREMENT,
 usuario_id INT NOT NULL,
 cancao_id INT NOT NULL,
 FOREIGN KEY (usuario_id) REFERENCES usuarios(usuario_id),
-FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id)
+FOREIGN KEY (cancao_id) REFERENCES cancoes(cancao_id),
+PRIMARY KEY (usuario_id, cancao_id)
 )ENGINE=InnoDB;
 
 CREATE TABLE usuarios_seguem_artistas(
