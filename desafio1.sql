@@ -73,7 +73,7 @@ VALUES ("Thati", 23, 1),
 
 INSERT INTO artist_table(nome)
 VALUES ("Walter Phoenix"),
-("Peter Strng"),
+("Peter Strong"),
 ("Lance Day"),
 ("Freedie Shannon");
 
