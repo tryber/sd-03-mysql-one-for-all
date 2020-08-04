@@ -12,9 +12,7 @@ usuario_id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(50) NOT NULL,
 idade INT NOT NULL,
 plano_id INT NOT NULL,
-historico_usuario_id INT NOT NULL,
-FOREIGN KEY (plano_id) REFERENCES planos(plano_id),
-FOREIGN KEY (historico_usuario_id) REFERENCES historicos_usuarios(historico_usuario_id)
+FOREIGN KEY (plano_id) REFERENCES planos(plano_id)
 )ENGINE=InnoDB;
 
 CREATE TABLE artistas(
