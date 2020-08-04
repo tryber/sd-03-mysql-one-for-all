@@ -1,4 +1,4 @@
-CREATE VIEW historico_reproducao_usuario AS
+CREATE VIEW historico_reproducao_usuarios AS
 SELECT u.nome AS usuario, c.titulo AS nome FROM historicos_usuarios AS hu
 JOIN usuarios AS u
 ON u.usuario_id = hu.usuario_id
