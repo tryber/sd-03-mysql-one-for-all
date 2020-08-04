@@ -8,6 +8,6 @@ BEGIN
   FROM artist_table art
   INNER JOIN album_table alb
   ON art.artist_id = alb.artista
-  WHERE alb.nome = name;
+  WHERE art.nome = name;
 END $$
 DELIMITER ;
