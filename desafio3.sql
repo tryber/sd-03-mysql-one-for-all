@@ -4,4 +4,4 @@ JOIN usuarios AS u
 ON u.usuario_id = hu.usuario_id
 JOIN cancoes AS c
 ON c.cancao_id = hu.cancao_id
-ORDER BY `usuario`, `nome`;
+ORDER BY `usuario`, `nome`
