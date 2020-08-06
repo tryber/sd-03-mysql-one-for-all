@@ -10,4 +10,4 @@ INNER JOIN artista AS artista ON artista.id = album.artista_id
 AND artista.nome = nome_artista;
 END $$
 
-DELIMITER;
+DELIMITER ;

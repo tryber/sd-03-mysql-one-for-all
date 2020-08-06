@@ -10,4 +10,4 @@ SELECT COUNT(*) FROM historico WHERE usuario_id = user_id INTO quant;
 RETURN quant;
 END $$
 
-DELIMITER;
+DELIMITER ;

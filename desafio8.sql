@@ -10,4 +10,4 @@ BEGIN
     DELETE FROM seguindo_artista WHERE usuario_id = OLD.id;
 END $$
 
-DELIMITER;
+DELIMITER ;
