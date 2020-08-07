@@ -9,4 +9,3 @@ CREATE TRIGGER trigger_usuario_delete
   DELETE FROM SpotifyClone.song_history 
   WHERE user_id = OLD.id;
   END $$ DELIMITER ;
-  
