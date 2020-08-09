@@ -6,9 +6,9 @@ CREATE VIEW perfil_artistas AS
     FROM
         SpotifyClone.albuns alb,
         SpotifyClone.artists art,
-        SpotifyClone.following_artist fol_art
+        SpotifyClone.following_artists fol_art
     WHERE
-        alb.artista_id = art.artista_id
+        alb.artists_id = art.artists_id
             AND fol_art.artist_id = alb.artist_id
     GROUP BY alb.album_id
     ORDER BY seguidores DESC , artista , album;
