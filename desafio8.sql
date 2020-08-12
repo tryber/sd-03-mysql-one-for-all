@@ -2,14 +2,14 @@ USE SpotifyClone;
 
 DELIMITER $$
 
-CREATE TRIGGER trigger_usuario_delete
-BEFORE DELETE ON usuario
+CREATE TRIGGER trigger_user_delete
+BEFORE DELETE ON user
 FOR EACH ROW
 BEGIN
-    DELETE FROM historico WHERE usuario_id = OLD.id;
-DELETE FROM seguindo_artista 
+    DELETE FROM history WHERE user_id = OLD.id;
+DELETE FROM follow_singer 
 WHERE
-    usuario_id = OLD.id;
+    user_id = OLD.id;
 END $$
 
 DELIMITER ;

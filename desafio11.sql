@@ -1,14 +1,14 @@
-CREATE VIEW cancoes_premium AS
+CREATE VIEW songs_premium AS
     SELECT 
-        cancoes.nome AS 'nome',
-        COUNT(historico.cancao_id) AS 'reproducoes'
+        songs.name AS 'name',
+        COUNT(history.song_id) AS 'reproducoes'
     FROM
-        SpotifyClone.historico AS historico
+        SpotifyClone.history AS history
             INNER JOIN
-        SpotifyClone.cancoes AS cancoes ON cancoes.id = historico.cancao_id
+        SpotifyClone.songs AS songs ON songs.id = history.song_id
             INNER JOIN
-        SpotifyClone.usuario AS usuario ON usuario.id = historico.usuario_id
+        SpotifyClone.user AS user ON user.id = history.user_id
     WHERE
-        usuario.plano_id IN (2 , 3)
-    GROUP BY (cancoes.nome)
+        user.plan_id IN (2 , 3)
+    GROUP BY (songs.name)
     ORDER BY 1;

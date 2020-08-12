@@ -1,13 +1,13 @@
 CREATE VIEW estatisticas_musicais AS
     SELECT 
-        COUNT(cancoes.id) AS 'cancoes',
+        COUNT(songs.id) AS 'songs',
         (SELECT 
-                COUNT(artista.id)
+                COUNT(singer.id)
             FROM
-                SpotifyClone.artista AS artista) AS 'artistas',
+                SpotifyClone.singer AS singer) AS 'singers',
         (SELECT 
                 COUNT(album.id)
             FROM
                 SpotifyClone.album AS album) AS 'albuns'
     FROM
-        SpotifyClone.cancoes AS cancoes;
+        SpotifyClone.songs AS songs;
