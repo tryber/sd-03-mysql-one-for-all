@@ -6,9 +6,10 @@ CREATE VIEW faturamento_atual AS
         ROUND(MAX(valor_plano), 2) AS 'faturamento_maximo',
         ROUND(AVG(valor_plano), 2) AS 'faturamento_medio',
         ROUND(SUM(valor_plano), 2) AS 'faturamento_total'
-	FROM planos
-		INNER JOIN
-	usuarios AS usuario ON usuario.plano_id = planos.plano_id;
+    FROM
+        planos
+            INNER JOIN
+        usuarios AS usuario ON usuario.plano_id = planos.plano_id;
 
 /*
 SELECT 
