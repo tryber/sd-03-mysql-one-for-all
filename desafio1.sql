@@ -7,53 +7,53 @@ USE SpotifyClone;
 -- -------------------------------------------------
 -- Tabela de Planos
 -- -------------------------------------------------    
-CREATE TABLE planos(
-	plano_id INT PRIMARY KEY auto_increment,
+CREATE TABLE planos (
+    plano_id INT PRIMARY KEY AUTO_INCREMENT,
     tipo VARCHAR(50) NOT NULL,
-    valor_plano DECIMAL(3,2) NOT NULL
-) ENGINE = InnoDB;
+    valor_plano DECIMAL(3 , 2 ) NOT NULL
+)  ENGINE=INNODB;
 
 -- -------------------------------------------------
 -- Tabela de Usuários
 -- -------------------------------------------------  
-CREATE TABLE usuarios(
-	usuario_id INT PRIMARY KEY auto_increment,
+CREATE TABLE usuarios (
+    usuario_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     idade INT NOT NULL,
     plano_id INT NOT NULL,
     FOREIGN KEY (plano_id)
-        REFERENCES planos(plano_id)
-) ENGINE = InnoDB;
+        REFERENCES planos (plano_id)
+)  ENGINE=INNODB;
 
 -- -------------------------------------------------
 -- Tabela de Artistas
 -- -------------------------------------------------  
-CREATE TABLE artistas(
-	artista_id INT PRIMARY KEY auto_increment,
+CREATE TABLE artistas (
+    artista_id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL
-) ENGINE = InnoDB;
+)  ENGINE=INNODB;
 
 -- -------------------------------------------------
 -- Tabela de Albuns
 -- -------------------------------------------------  
-CREATE TABLE albuns(
-	album_id INT PRIMARY KEY auto_increment,
+CREATE TABLE albuns (
+    album_id INT PRIMARY KEY AUTO_INCREMENT,
     nome_album VARCHAR(50) NOT NULL,
     artista_id INT NOT NULL,
     FOREIGN KEY (artista_id)
-        REFERENCES artistas(artista_id)
-) ENGINE = InnoDB;
+        REFERENCES artistas (artista_id)
+)  ENGINE=INNODB;
 
 -- -------------------------------------------------
 -- Tabela de Canções
 -- -------------------------------------------------  
-CREATE TABLE cancoes(
-	cancao_id INT PRIMARY KEY auto_increment,
+CREATE TABLE cancoes (
+    cancao_id INT PRIMARY KEY AUTO_INCREMENT,
     nome_cancao VARCHAR(50) NOT NULL,
     album_id INT NOT NULL,
     FOREIGN KEY (album_id)
-        REFERENCES albuns(album_id)
-) ENGINE = InnoDB;
+        REFERENCES albuns (album_id)
+)  ENGINE=INNODB;
 
 -- -------------------------------------------------
 -- Tabela de Histórico de Reproduções do Usuário
@@ -61,11 +61,11 @@ CREATE TABLE cancoes(
 CREATE TABLE historico_reproducoes (
     usuario_id INT NOT NULL,
     cancao_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, cancao_id),
+    PRIMARY KEY (usuario_id , cancao_id),
     FOREIGN KEY (usuario_id)
-        REFERENCES usuarios(usuario_id),
+        REFERENCES usuarios (usuario_id),
     FOREIGN KEY (cancao_id)
-        REFERENCES cancoes(cancao_id)
+        REFERENCES cancoes (cancao_id)
 )  ENGINE=INNODB;
 
 -- -------------------------------------------------
@@ -74,11 +74,11 @@ CREATE TABLE historico_reproducoes (
 CREATE TABLE seguindo_artista (
     usuario_id INT NOT NULL,
     artista_id INT NOT NULL,
-    PRIMARY KEY (usuario_id, artista_id),
+    PRIMARY KEY (usuario_id , artista_id),
     FOREIGN KEY (usuario_id)
-        REFERENCES usuarios(usuario_id),
+        REFERENCES usuarios (usuario_id),
     FOREIGN KEY (artista_id)
-        REFERENCES artistas(artista_id)
+        REFERENCES artistas (artista_id)
 )  ENGINE=INNODB;
 
 -- -------------------------------------------------
