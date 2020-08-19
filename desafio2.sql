@@ -1,6 +1,21 @@
 USE SpotifyClone;
 
+CREATE VIEW estatisticas_musicais AS
+    SELECT 
+        COUNT(cancoes.cancao_id) AS 'cancoes',
+        (SELECT 
+                COUNT(artistas.artista_id)
+            FROM
+                SpotifyClone.artistas AS artistas) AS 'artistas',
+        (SELECT 
+                COUNT(albuns.album_id)
+            FROM
+                SpotifyClone.albuns AS albuns) AS 'albuns'
+    FROM
+        SpotifyClone.cancoes AS cancoes;
+
 /*
+Decobrir porque não funcionou assim
 CREATE VIEW estatisticas_musicais AS
     SELECT 
         COUNT(c.cancao_id) AS cancoes,
@@ -13,17 +28,3 @@ CREATE VIEW estatisticas_musicais AS
             INNER JOIN
         artistas AS a ON al.artista_id = a.artista_id;
 */
-
-CREATE VIEW estatisticas_musicais AS
-    SELECT 
-        COUNT(cancoes.cancao_id) AS cancoes,
-        (SELECT 
-                COUNT(artistas.artista_id)
-            FROM
-                SpotifyClone.artistas AS artistas) AS artistas,
-        (SELECT 
-                COUNT(albuns.album_id)
-            FROM
-                SpotifyClone.albuns AS albuns) AS albuns
-    FROM
-        SpotifyClone.cancoes AS cancoes;
