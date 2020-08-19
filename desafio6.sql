@@ -1,5 +1,3 @@
-USE SpotifyClone;
-
 CREATE VIEW faturamento_atual AS
     SELECT 
         ROUND(MIN(valor_plano), 2) AS 'faturamento_minimo',

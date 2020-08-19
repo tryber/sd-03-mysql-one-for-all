@@ -1,5 +1,3 @@
-USE SpotifyClone;
-
 DELIMITER $$
 
 CREATE PROCEDURE albuns_do_artista (IN nome_artista VARCHAR(50))
